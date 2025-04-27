@@ -1,10 +1,10 @@
 {
-  "name": "aws-nitro-enclaves-nsm-node",
-  "version": "0.0.2",
+  "name": "@0xpolygonid/aws-nitro-enclaves-nsm-node",
+  "version": "0.0.1",
   "description": "A Node.js addon for interacting with the Nitro Secure Module, which provides Nitro Enclaves with attestation capability.",
   "main": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/wei-rong-1/aws-nitro-enclaves-nsm-node",
+  "repository": "https://github.com/0xpolygonid/aws-nitro-enclaves-nsm-node",
   "keywords": [
     "AWS Nitro Enclave",
     "Nitro Secure Module",
@@ -37,8 +37,8 @@
     "version": "napi version"
   },
   "devDependencies": {
-    "@napi-rs/cli": "^2.15.2",
-    "@types/node": "^20.1.7",
+    "@napi-rs/cli": "^2.18.4",
+    "@types/node": "^22.15.2",
     "ava": "^5.1.1",
     "prettier": "^2.8.8"
   },

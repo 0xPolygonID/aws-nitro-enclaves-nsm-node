@@ -1,6 +1,6 @@
 {
-  "name": "aws-nitro-enclaves-nsm-node-linux-x64-musl",
-  "version": "0.0.2",
+  "name": "@0xpolygonid/aws-nitro-enclaves-nsm-node-linux-x64-musl",
+  "version": "0.0.1",
   "os": [
     "linux"
   ],
@@ -13,7 +13,7 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">= 10"
+    "node": ">= 18"
   },
   "libc": [
     "musl"

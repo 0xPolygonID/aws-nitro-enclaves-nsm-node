@@ -41,7 +41,7 @@ jobs:
         uses: actions/setup-node@v3
         if: ${{ !matrix.settings.docker }}
         with:
-          node-version: 18
+          node-version: 22
           check-latest: true
           cache: yarn
       - name: Install
@@ -75,10 +75,10 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Setup node x86
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         if: matrix.settings.target == 'i686-pc-windows-msvc'
         with:
-          node-version: 18
+          node-version: 22
           check-latest: true
           cache: yarn
           architecture: x86
@@ -107,14 +107,12 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          # - '14'
-          # - '16'
-          - '18'
+          - '22'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           check-latest: true
@@ -122,7 +120,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: bindings-x86_64-unknown-linux-gnu
           path: .
@@ -141,12 +139,12 @@ jobs:
         node:
           # - '14'
           # - '16'
-          - '18'
+          - '22'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           check-latest: true
@@ -156,7 +154,7 @@ jobs:
           yarn config set supportedArchitectures.libc "musl"
           yarn install
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: bindings-x86_64-unknown-linux-musl
           path: .
@@ -172,17 +170,17 @@ jobs:
       - test-linux-x64-gnu-binding
       - test-linux-x64-musl-binding
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           check-latest: true
           cache: yarn
       - name: Install dependencies
         run: yarn install
       - name: Download all artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
       - name: Move artifacts
@@ -204,5 +202,4 @@ jobs:
             echo "Not a release, skipping publish"
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.POLYGONID_NPM_PUBLISH_TOKEN }}

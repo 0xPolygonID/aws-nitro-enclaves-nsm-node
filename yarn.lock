@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@napi-rs/cli@^2.15.2":
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/@napi-rs/cli/-/cli-2.15.2.tgz#33547b25fcc1bc0dd52d1c7409694b3f62c01c16"
-  integrity sha512-80tBCtCnEhAmFtB9oPM0FL74uW7fAmtpeqjvERH7Q1z/aZzCAs/iNfE7U3ehpwg9Q07Ob2Eh/+1guyCdX/p24w==
+"@napi-rs/cli@^2.18.4":
+  version "2.18.4"
+  resolved "https://registry.yarnpkg.com/@napi-rs/cli/-/cli-2.18.4.tgz#12bebfb7995902fa7ab43cc0b155a7f5a2caa873"
+  integrity sha512-SgJeA4df9DE2iAEpr3M2H0OKl/yjtg1BnRI5/JyowS71tUWhrfSu2LT0V3vlHET+g1hBVlrO60PmEXwUEKp8Mg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -28,10 +28,12 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@types/node@^20.1.7":
-  version "20.1.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.7.tgz#ce10c802f7731909d0a44ac9888e8b3a9125eb62"
-  integrity sha512-WCuw/o4GSwDGMoonES8rcvwsig77dGCMbZDrZr2x4ZZiNW4P/gcoZXe/0twgtobcTkmg9TuKflxYL/DuwDyJzg==
+"@types/node@^22.15.2":
+  version "22.15.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.2.tgz#1db55aa64618ee93a58c8912f74beefe44aca905"
+  integrity sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A==
+  dependencies:
+    undici-types "~6.21.0"
 
 acorn-walk@^8.2.0:
   version "8.2.0"
@@ -961,6 +963,11 @@ type-fest@^0.13.1:
   version "0.13.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.13.1.tgz#0172cb5bce80b0bd542ea348db50c7e21834d934"
   integrity sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==
+
+undici-types@~6.21.0:
+  version "6.21.0"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
+  integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
 
 well-known-symbols@^2.0.0:
   version "2.0.0"

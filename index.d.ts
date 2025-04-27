@@ -16,19 +16,26 @@ export interface PcrDescription {
   lock: boolean;
   data: Buffer;
 }
-export function open(): number;
-export function init(): number;
-export function close(fd: number): void;
-export function exit(fd: number): void;
-export function extendPcr(fd: number, index: number, data: Buffer): Buffer;
-export function getPcrDescription(fd: number, index: number): PcrDescription;
-export function lockPcr(fd: number, index: number): void;
-export function lockPcrs(fd: number, range: number): void;
-export function getDescription(fd: number): Description;
-export function getAttestationDoc(
+export declare function open(): number;
+export declare function init(): number;
+export declare function close(fd: number): void;
+export declare function exit(fd: number): void;
+export declare function extendPcr(
+  fd: number,
+  index: number,
+  data: Buffer
+): Buffer;
+export declare function getPcrDescription(
+  fd: number,
+  index: number
+): PcrDescription;
+export declare function lockPcr(fd: number, index: number): void;
+export declare function lockPcrs(fd: number, range: number): void;
+export declare function getDescription(fd: number): Description;
+export declare function getAttestationDoc(
   fd: number,
   userData?: Buffer | undefined | null,
   nonce?: Buffer | undefined | null,
   publicKey?: Buffer | undefined | null
 ): Buffer;
-export function getRandom(fd: number): Buffer;
+export declare function getRandom(fd: number): Buffer;
