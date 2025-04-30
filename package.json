@@ -5,6 +5,9 @@
   "main": "index.js",
   "types": "index.d.ts",
   "repository": "https://github.com/0xpolygonid/aws-nitro-enclaves-nsm-node",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "AWS Nitro Enclave",
     "Nitro Secure Module",
