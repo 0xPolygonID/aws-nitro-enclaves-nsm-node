@@ -14,7 +14,9 @@
   ],
   "files": [
     "index.js",
-    "index.d.ts"
+    "index.d.ts",
+    "aws-nitro-enclaves-nsm-node.linux-x64-gnu.node",
+    "aws-nitro-enclaves-nsm-node.linux-x64-musl.node"
   ],
   "napi": {
     "name": "aws-nitro-enclaves-nsm-node",

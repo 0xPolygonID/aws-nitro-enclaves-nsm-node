@@ -164,8 +164,8 @@ jobs:
         shell: bash
       - name: Test bindings
         run: docker run --rm -v $(pwd):/build -w /build node:${{ matrix.node }}-alpine yarn test
-  publish:
-    name: Publish
+  upload-artifacts:
+    name: Upload Artifacts
     runs-on: ubuntu-latest
     needs:
       - test-linux-x64-gnu-binding
@@ -177,15 +177,20 @@ jobs:
         with:
           node-version: 22
           check-latest: true
-          registry-url: https://registry.npmjs.org/
           cache: yarn
       - run: yarn install
       - uses: actions/download-artifact@v4
         with:
           path: artifacts
-      - run: yarn artifacts
-      - run: ls -R ./npm
-        shell: bash
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.POLYGONID_NPM_PUBLISH_TOKEN }}
+      - name: Prepare artifacts for download
+        run: |
+          mkdir -p dist
+          cp artifacts/bindings-x86_64-unknown-linux-gnu/*.node dist/${{ env.APP_NAME }}.linux-x64-gnu.node
+          cp artifacts/bindings-x86_64-unknown-linux-musl/*.node dist/${{ env.APP_NAME }}.linux-x64-musl.node
+      - name: Upload artifacts for download
+        uses: actions/upload-artifact@v4
+        with:
+          name: nitro-enclave-nsm-binaries
+          path: dist/
+          retention-days: 30
+          if-no-files-found: error
